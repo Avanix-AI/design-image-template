@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Avanix Landing" description="Marketing landing hero + pillars + stats using Avanix glass components" -->
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</helmet>
+
+<div style="font-family: var(--font-body); background: var(--bg-page);">
+
+  <!-- HERO (navy) -->
+  <section style="position: relative; overflow: hidden; background: radial-gradient(80% 90% at 70% -10%, #16236e 0%, #0B1240 45%, #06091F 100%); padding: clamp(48px,7vw,96px) clamp(16px,4vw,40px) clamp(60px,8vw,110px);">
+    <div style="position: relative; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center;">
+      <div>
+        <div style="margin-bottom: 22px;">
+          <x-import component-from-global-scope="AvanixDesignSystem_a5b4a8.StatusPill" status="learning" tone="dark" hint-size="260px,34px">Cộng đồng AI · 2,271 thành viên</x-import>
+        </div>
+        <h1 style="position: relative; z-index: 1; font-family: var(--font-display); font-size: clamp(2.6rem,5.2vw,4.2rem); font-weight: 800; line-height: 1.12; letter-spacing: -0.03em; color: #fff; margin: 0 0 18px;">AI thực chiến,<br>ra <span style="color: var(--av-blue-400);">kết quả thật.</span></h1>
+        <p style="font-size: 19px; line-height: 1.55; color: var(--av-slate-300); max-width: 480px; margin: 0 0 30px;">Làm chủ tư duy thiết kế hệ thống, xây Agent tự vận hành, và biến dữ liệu hỗn loạn thành tài sản — cùng Avanix.</p>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <x-import component-from-global-scope="AvanixDesignSystem_a5b4a8.Button" size="lg" hint-size="190px,52px">Bắt tay vào việc</x-import>
+          <x-import component-from-global-scope="AvanixDesignSystem_a5b4a8.Button" size="lg" variant="secondary" hint-size="150px,52px">Xem demo</x-import>
+        </div>
+      </div>
+      <!-- Liquid-glass 3D illustration: AI core orb + floating glass modules -->
+      <div aria-hidden="true" style="position: relative; width: min(460px,94%); aspect-ratio: 1 / 1; margin: 0 auto;">
+        <div style="position: absolute; left: 50%; bottom: 8%; transform: translateX(-50%); width: 76%; height: 70px; border-radius: 50%; background: radial-gradient(closest-side, rgba(46,114,255,0.55), transparent); filter: blur(10px);"></div>
+        <!-- tilted back glass panel -->
+        <div style="position: absolute; inset: 15% 11% 19% 13%; border-radius: 32px; background: linear-gradient(150deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04)); border: 1px solid rgba(255,255,255,0.22); box-shadow: 0 34px 80px -20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.45); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); transform: rotate(-7deg);"></div>
+        <!-- central AI core orb -->
+        <div style="position: absolute; left: 50%; top: 44%; transform: translate(-50%,-50%); width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle at 34% 28%, #ffffff 0%, #93B4FF 36%, #0A5BFF 76%, #0742C2 100%); box-shadow: 0 0 0 1px rgba(255,255,255,0.3), 0 24px 56px -10px rgba(10,91,255,0.85), inset 0 -12px 26px rgba(7,66,194,0.6), inset 7px 9px 20px rgba(255,255,255,0.7); display: flex; align-items: center; justify-content: center;">
+          <img src="../../assets/logo/mark-white.png" alt="" style="width: 46%; filter: drop-shadow(0 3px 8px rgba(7,66,194,0.5));">
+        </div>
+        <!-- floating glass module chips -->
+        <div style="position: absolute; left: 4%; top: 20%; width: 92px; padding: 12px; border-radius: 18px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); box-shadow: 0 18px 40px -14px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; align-items: center; gap: 8px;">
+          <span style="width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #fff, #5C90FF 55%, #0A5BFF); box-shadow: 0 4px 10px -2px rgba(10,91,255,0.7);"></span>
+          <span style="flex:1; height: 6px; border-radius: 999px; background: rgba(255,255,255,0.4);"></span>
+        </div>
+        <div style="position: absolute; right: 3%; top: 42%; width: 104px; padding: 12px; border-radius: 18px; background: rgba(255,255,255,0.14); border: 1px solid rgba(255,255,255,0.28); box-shadow: 0 18px 40px -14px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.5); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; gap: 7px;">
+          <span style="height: 6px; width: 70%; border-radius: 999px; background: rgba(255,255,255,0.55);"></span>
+          <span style="height: 6px; width: 100%; border-radius: 999px; background: rgba(255,255,255,0.3);"></span>
+          <span style="height: 6px; width: 45%; border-radius: 999px; background: rgba(46,114,255,0.8);"></span>
+        </div>
+        <div style="position: absolute; left: 16%; bottom: 16%; width: 26px; height: 26px; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #fff, #C5D6FF 45%, #2E3CB0); box-shadow: 0 8px 18px -4px rgba(11,18,64,0.7);"></div>
+        <div style="position: absolute; right: 18%; bottom: 12%; width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 34% 30%, #fff, #5C90FF 55%, #0A5BFF);"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILLARS (light) -->
+  <section style="background: radial-gradient(70% 80% at 50% 0%, rgba(10,91,255,0.1), transparent 55%), var(--bg-page-grad); padding: clamp(48px,7vw,90px) clamp(16px,4vw,40px);">
+    <div style="max-width: 1000px; margin: 0 auto 44px; text-align: center;">
+      <span class="av-eyebrow">Bạn đang xây dựng gì</span>
+      <h2 style="font-family: var(--font-display); font-size: clamp(1.9rem,3.6vw,2.8rem); font-weight: 800; letter-spacing: -0.025em; color: var(--av-navy); margin: 10px 0 0;">Bốn mảnh ghép, một hệ thống.</h2>
+    </div>
+    <div style="max-width: 880px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+      <div class="av-glass" style="padding: 24px; display: flex; gap: 16px; align-items: flex-start;">
+        <span class="av-step" style="flex: none;">1</span>
+        <div><h4 style="font-size: 18px; margin: 0 0 4px; color: var(--av-navy);">Kỹ năng thực chiến</h4><p style="font-size: 14px; margin: 0; color: var(--text-body); line-height: 1.5;">Học AI qua quy trình thật, không chỉ lý thuyết.</p></div>
+      </div>
+      <div class="av-glass" style="padding: 24px; display: flex; gap: 16px; align-items: flex-start;">
+        <span class="av-step" style="flex: none;">2</span>
+        <div><h4 style="font-size: 18px; margin: 0 0 4px; color: var(--av-navy);">Agent tự vận hành</h4><p style="font-size: 14px; margin: 0; color: var(--text-body); line-height: 1.5;">Xây hệ thống Agent đọc, nghĩ và hành động.</p></div>
+      </div>
+      <div class="av-glass" style="padding: 24px; display: flex; gap: 16px; align-items: flex-start;">
+        <span class="av-step" style="flex: none;">3</span>
+        <div><h4 style="font-size: 18px; margin: 0 0 4px; color: var(--av-navy);">Dữ liệu thành tài sản</h4><p style="font-size: 14px; margin: 0; color: var(--text-body); line-height: 1.5;">Biến ghi chú & dữ liệu hỗn loạn thành hệ thống.</p></div>
+      </div>
+      <div class="av-glass" style="padding: 24px; display: flex; gap: 16px; align-items: flex-start;">
+        <span class="av-step" style="flex: none;">4</span>
+        <div><h4 style="font-size: 18px; margin: 0 0 4px; color: var(--av-navy);">Hệ thu nhập số</h4><p style="font-size: 14px; margin: 0; color: var(--text-body); line-height: 1.5;">Tự động hoá để tiết kiệm thời gian, tạo kết quả.</p></div>
+      </div>
+    </div>
+    <div style="max-width: 880px; margin: 40px auto 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 16px;">
+      <x-import component-from-global-scope="AvanixDesignSystem_a5b4a8.Stat" value="2,271" label="Thành viên" align="center" hint-size="100%,110px"></x-import>
+      <x-import component-from-global-scope="AvanixDesignSystem_a5b4a8.Stat" value="33" label="Bài học" align="center" hint-size="100%,110px"></x-import>
+      <x-import component-from-global-scope="AvanixDesignSystem_a5b4a8.Stat" value="6" label="Cộng sự" align="center" hint-size="100%,110px"></x-import>
+      <x-import component-from-global-scope="AvanixDesignSystem_a5b4a8.Stat" value="$5" label="/ tháng" align="center" hint-size="100%,110px"></x-import>
+    </div>
+  </section>
+
+</div>
+
+</x-dc>
+</body>
+</html>

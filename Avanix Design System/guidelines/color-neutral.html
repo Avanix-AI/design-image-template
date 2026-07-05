@@ -1,0 +1,35 @@
+<!-- @dsCard group="Colors" viewport="700x140" name="Navy & slate ramp" subtitle="Dark surfaces, ink, and cool neutral text/borders" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page-grad); padding: 22px; font-family: var(--font-body); }
+  .grid { display: flex; flex-direction: column; gap: 8px; }
+  .row { display: flex; gap: 8px; }
+  .sw { flex: 1; height: 40px; border-radius: var(--radius-sm); display: flex; align-items: center; padding: 0 10px; box-shadow: var(--shadow-xs); }
+  .t { font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="row">
+      <div class="sw" style="background:var(--av-navy-950);color:#fff;"><span class="t">navy 950</span></div>
+      <div class="sw" style="background:var(--av-navy-900);color:#fff;"><span class="t">navy 900</span></div>
+      <div class="sw" style="background:var(--av-navy-800);color:#fff;"><span class="t">navy 800</span></div>
+      <div class="sw" style="background:var(--av-navy-700);color:#fff;"><span class="t">navy 700</span></div>
+      <div class="sw" style="background:var(--av-navy-600);color:#fff;"><span class="t">navy 600</span></div>
+      <div class="sw" style="background:var(--av-navy-500);color:#fff;"><span class="t">cobalt 500</span></div>
+    </div>
+    <div class="row">
+      <div class="sw" style="background:var(--av-slate-700);color:#fff;"><span class="t">slate 700</span></div>
+      <div class="sw" style="background:var(--av-slate-500);color:#fff;"><span class="t">slate 500</span></div>
+      <div class="sw" style="background:var(--av-slate-300);color:var(--av-navy);"><span class="t">slate 300</span></div>
+      <div class="sw" style="background:var(--av-slate-200);color:var(--av-navy);"><span class="t">slate 200</span></div>
+      <div class="sw" style="background:var(--av-slate-100);color:var(--av-navy);border:1px solid var(--border);"><span class="t">slate 100</span></div>
+      <div class="sw" style="background:var(--av-slate-50);color:var(--av-navy);border:1px solid var(--border);"><span class="t">slate 50</span></div>
+    </div>
+  </div>
+</body>
+</html>

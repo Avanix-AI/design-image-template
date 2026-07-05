@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  html, body { margin: 0; }
+  .thumb {
+    position: relative; width: 1460px; height: 752px; overflow: hidden;
+    font-family: var(--font-body);
+    background:
+      radial-gradient(70% 100% at 80% 14%, #ffffff 0%, transparent 52%),
+      radial-gradient(95% 120% at 86% 30%, rgba(92,144,255,0.26) 0%, transparent 54%),
+      radial-gradient(120% 130% at 16% 100%, #E9EEFA 0%, #DCE4F5 70%);
+  }
+  .grid-tex {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(11,18,64,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(11,18,64,0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(82% 82% at 72% 46%, #000 0%, transparent 76%);
+    -webkit-mask-image: radial-gradient(82% 82% at 72% 46%, #000 0%, transparent 76%);
+  }
+  .bokeh { position: absolute; border-radius: 999px; filter: blur(2px);
+    background: radial-gradient(closest-side, rgba(92,144,255,0.5), rgba(92,144,255,0)); }
+
+  .pad { position: absolute; inset: 0; padding: 72px 80px; box-sizing: border-box; display: flex; flex-direction: column; }
+  .brandrow { display: flex; align-items: center; gap: 14px; }
+  .brandrow img { height: 38px; }
+  .brand-sep { width: 1px; height: 26px; background: rgba(11,18,64,0.16); }
+  .module-tag { font-size: 15px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--av-blue-600); }
+
+  .center { flex: 1; display: flex; flex-direction: column; justify-content: center; max-width: 700px; position: relative; z-index: 3; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px; align-self: flex-start;
+    padding: 9px 18px; border-radius: 999px;
+    background: rgba(10,91,255,0.07); border: 1px solid rgba(10,91,255,0.22);
+    font-size: 16px; font-weight: 700; color: var(--av-blue-700); margin-bottom: 28px; white-space: nowrap; letter-spacing: 0.04em;
+  }
+  .eyebrow .pip { width: 9px; height: 9px; border-radius: 999px; background: var(--av-blue-600); box-shadow: 0 0 0 4px rgba(10,91,255,0.18); }
+  h1 { font-family: var(--font-display); font-weight: 900; font-size: 92px; line-height: 1.04; letter-spacing: -0.03em; color: var(--av-navy-900); margin: 0; }
+  h1 .accent { color: var(--av-blue-600); }
+  .sub { font-size: 23px; line-height: 1.5; color: var(--av-slate-600); margin: 26px 0 0; max-width: 560px; }
+  .chiprow { display: flex; gap: 12px; margin-top: 36px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px; border-radius: 999px; font-size: 17px; font-weight: 600;
+    background: rgba(255,255,255,0.8); border: 1px solid #fff; color: var(--av-navy-900); box-shadow: var(--shadow-sm); white-space: nowrap;
+  }
+  .chip .ic { color: var(--av-blue-600); display: flex; }
+
+  /* ---- generative studio illustration ---- */
+  .art { position: absolute; right: 40px; top: 50%; transform: translateY(-50%); width: 660px; height: 680px; z-index: 1; }
+  .art .halo { position: absolute; left: 52%; top: 50%; transform: translate(-50%,-50%); width: 480px; height: 480px; border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(92,144,255,0.30), transparent 72%); filter: blur(24px); }
+
+  /* fanned variation frames behind the main panel */
+  .vframe { position: absolute; left: 50%; top: 48%; width: 318px; height: 392px; border-radius: 26px;
+    border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 30px 60px -24px rgba(11,18,64,0.34); overflow: hidden; }
+  .vframe.b1 { transform: translate(-50%,-50%) rotate(-12deg) translateX(-46px); }
+  .vframe.b2 { transform: translate(-50%,-50%) rotate(8deg) translateX(40px); }
+  .mesh { position: absolute; inset: -24px; filter: blur(10px); }
+  .mesh.m1 { background:
+      radial-gradient(60% 70% at 22% 24%, #8FB4FF 0%, transparent 60%),
+      radial-gradient(60% 60% at 82% 30%, #B79BFF 0%, transparent 60%),
+      radial-gradient(70% 70% at 70% 88%, #57D6C4 0%, transparent 62%),
+      radial-gradient(80% 80% at 20% 90%, #2E72FF 0%, transparent 60%),
+      linear-gradient(135deg, #DCE8FF, #C7D6FF); }
+  .mesh.m2 { background:
+      radial-gradient(60% 70% at 78% 22%, #FFB37A 0%, transparent 58%),
+      radial-gradient(60% 60% at 20% 30%, #6E8BFF 0%, transparent 60%),
+      radial-gradient(70% 70% at 30% 86%, #B79BFF 0%, transparent 62%),
+      radial-gradient(80% 80% at 84% 86%, #2E72FF 0%, transparent 60%),
+      linear-gradient(135deg, #E6ECFF, #CBD9FF); }
+
+  /* main glass studio panel */
+  .panel { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%) rotate(-2deg);
+    width: 372px; border-radius: 30px; padding: 16px; box-sizing: border-box;
+    background: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.95);
+    box-shadow: 0 44px 90px -30px rgba(11,18,64,0.42), inset 0 2px 0 rgba(255,255,255,0.95); backdrop-filter: blur(10px); }
+  .canvas { position: relative; height: 300px; border-radius: 20px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(11,18,64,0.06); }
+  .canvas .mesh3 { position: absolute; inset: -26px; filter: blur(11px); background:
+      radial-gradient(55% 60% at 26% 22%, #9FC0FF 0%, transparent 58%),
+      radial-gradient(55% 60% at 80% 24%, #C3A6FF 0%, transparent 58%),
+      radial-gradient(60% 65% at 24% 84%, #2E72FF 0%, transparent 60%),
+      radial-gradient(70% 70% at 82% 88%, #57D6C4 0%, transparent 60%),
+      radial-gradient(50% 50% at 54% 54%, #FFC58F 0%, transparent 56%),
+      linear-gradient(135deg, #E7EEFF, #CFDCFF); }
+  .genimg, .varimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .fv-a { filter: none; }
+  .fv-b { filter: sepia(.45) saturate(1.5) hue-rotate(-25deg) brightness(1.03); }
+  .fv-c { filter: saturate(1.35) hue-rotate(55deg) brightness(1.04); }
+  .fv-d { filter: grayscale(1) contrast(1.07); }
+  .canvas .gloss { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,0.34) 0%, transparent 36%); pointer-events: none; }
+  .canvas .grain { position: absolute; inset: 0; opacity: .5; mix-blend-mode: overlay;
+    background-image: radial-gradient(rgba(255,255,255,0.7) 0.5px, transparent 0.6px); background-size: 3px 3px; }
+  .badge { position: absolute; top: 12px; right: 12px; display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 13px; border-radius: 999px; background: rgba(11,18,64,0.5); backdrop-filter: blur(6px);
+    color: #fff; font-size: 13px; font-weight: 800; letter-spacing: 0.02em; box-shadow: 0 6px 16px rgba(11,18,64,0.3); }
+  .badge svg { display: block; }
+
+  /* prompt bar */
+  .prompt { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 12px 14px; border-radius: 16px;
+    background: #fff; box-shadow: inset 0 0 0 1px rgba(11,18,64,0.08), 0 8px 18px -10px rgba(11,18,64,0.2); }
+  .prompt .pic { width: 30px; height: 30px; flex: none; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+    background: var(--av-blue-600); color: #fff; }
+  .prompt .lines { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .prompt .lines i { display: block; height: 7px; border-radius: 999px; background: linear-gradient(90deg, var(--av-navy-900), rgba(11,18,64,0.18)); }
+  .prompt .lines i:first-child { width: 88%; }
+  .prompt .lines i:last-child { width: 54%; opacity: .55; }
+  .prompt .go { width: 34px; height: 34px; flex: none; border-radius: 11px; background: var(--av-blue-600); color: #fff;
+    display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 18px -6px rgba(10,91,255,0.6); }
+
+  /* variation strip */
+  .strip { display: flex; gap: 9px; margin-top: 12px; }
+  .strip .v { flex: 1; height: 60px; border-radius: 12px; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(11,18,64,0.06); position: relative; }
+  .strip .v.sel { box-shadow: 0 0 0 2.5px var(--av-blue-600), 0 8px 18px -8px rgba(10,91,255,0.5); }
+  .sv1 { background: radial-gradient(70% 80% at 20% 20%, #9FC0FF, transparent 60%), radial-gradient(70% 80% at 90% 90%, #57D6C4, transparent 60%), linear-gradient(135deg,#DCE8FF,#C3A6FF); }
+  .sv2 { background: radial-gradient(70% 80% at 80% 20%, #FFB37A, transparent 60%), radial-gradient(70% 80% at 10% 90%, #2E72FF, transparent 60%), linear-gradient(135deg,#E6ECFF,#C7D6FF); }
+  .sv3 { background: radial-gradient(70% 80% at 30% 80%, #C3A6FF, transparent 60%), radial-gradient(70% 80% at 90% 20%, #2E72FF, transparent 60%), linear-gradient(135deg,#DCE8FF,#9FC0FF); }
+  .sv4 { background: radial-gradient(70% 80% at 50% 20%, #57D6C4, transparent 60%), radial-gradient(70% 80% at 50% 90%, #6E8BFF, transparent 60%), linear-gradient(135deg,#E7EEFF,#CFDCFF); }
+
+  /* floating tool-logo nodes */
+  .tool { position: absolute; width: 76px; height: 76px; border-radius: 22px; transform: translate(-50%,-50%);
+    background: radial-gradient(130% 130% at 32% 22%, #ffffff 0%, #EEF3FF 60%, #D7E2FF 100%);
+    box-shadow: 0 22px 44px -18px rgba(11,18,64,0.4), inset 0 2px 4px rgba(255,255,255,0.95), inset 0 0 0 1px rgba(255,255,255,0.8);
+    display: flex; align-items: center; justify-content: center; z-index: 4; }
+  .tool img { width: 50%; height: 50%; object-fit: contain; }
+  .tool.sm { width: 60px; height: 60px; border-radius: 18px; }
+  .sparkle { position: absolute; transform: translate(-50%,-50%); color: var(--av-blue-500); opacity: .9; z-index: 4; }
+</style>
+</head>
+<body>
+<div class="thumb">
+  <div class="grid-tex"></div>
+
+  <span class="bokeh" style="left:58%;top:12%;width:150px;height:150px;opacity:.5;"></span>
+  <span class="bokeh" style="left:92%;top:60%;width:200px;height:200px;opacity:.45;"></span>
+  <span class="bokeh" style="left:64%;top:88%;width:120px;height:120px;opacity:.4;"></span>
+
+  <div class="art">
+    <div class="halo"></div>
+
+    <!-- fanned variation frames -->
+    <div class="vframe b1"><img class="genimg fv-c" src="img/gen-portrait.png" alt=""></div>
+    <div class="vframe b2"><img class="genimg fv-b" src="img/gen-portrait.png" alt=""></div>
+
+    <!-- main studio panel -->
+    <div class="panel">
+      <div class="canvas">
+        <img class="genimg fv-a" src="img/gen-portrait.png" alt="Ảnh chân dung tạo bởi AI">
+        <div class="grain"></div>
+        <div class="gloss"></div>
+        <div class="badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.6L19 9l-4.4 3.2L16 18l-4-3.4L8 18l1.4-5.8L5 9l5.2-1.4L12 2z"/></svg>
+          AI Generative
+        </div>
+      </div>
+
+      <div class="prompt">
+        <span class="pic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4.5" width="17" height="13" rx="2.5" stroke="currentColor" stroke-width="1.8"/><circle cx="8.5" cy="9.5" r="1.6" fill="currentColor"/><path d="M5 16l4-4 3 2.5L16 10l4 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="lines"><i></i><i></i></span>
+        <span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+
+      <div class="strip">
+        <span class="v sel"><img class="varimg fv-a" src="img/gen-portrait.png" alt=""></span>
+        <span class="v"><img class="varimg fv-b" src="img/gen-portrait.png" alt=""></span>
+        <span class="v"><img class="varimg fv-c" src="img/gen-portrait.png" alt=""></span>
+        <span class="v"><img class="varimg fv-d" src="img/gen-portrait.png" alt=""></span>
+      </div>
+    </div>
+
+    <!-- floating tools -->
+    <div class="tool" style="left:78px;top:120px;"><img src="../assets/logos-ai/midjourney.svg" alt="Midjourney"></div>
+    <div class="tool sm" style="left:600px;top:170px;"><img src="../assets/logos-ai/stability-ai.svg" alt="Stability AI"></div>
+    <div class="tool sm" style="left:96px;top:560px;"><img src="../assets/logos-ai/magnific.png" alt="Magnific"></div>
+
+    <svg class="sparkle" style="left:560px;top:520px;" width="40" height="40" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2z"/></svg>
+    <svg class="sparkle" style="left:48px;top:330px;" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" opacity="0.6"><path d="M12 2l1.6 6.4L20 10l-6.4 1.6L12 18l-1.6-6.4L4 10l6.4-1.6L12 2z"/></svg>
+  </div>
+
+  <div class="pad">
+    <div class="brandrow">
+      <img src="../assets/logo/lockup-navy.png" alt="Avanix">
+      <span class="brand-sep"></span>
+      <span class="module-tag">Lộ trình sáng tạo</span>
+    </div>
+
+    <div class="center">
+      <span class="eyebrow"><span class="pip"></span>AI TẠO ẢNH · DESIGN</span>
+      <h1>AI Generative<br><span class="accent">Tạo ảnh Pro</span></h1>
+      <p class="sub">Tự tạo hình ảnh nhất quán nhân vật, design system, tạo thiết kế chuyên nghiệp: dựng concept, biến thể và tinh chỉnh chất lượng cao cùng AI.</p>
+      <div class="chiprow">
+        <span class="chip"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 0 4 20.5v-15Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 1 1.5 1.5v-15Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span>10 bài học</span>
+        <span class="chip"><span class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Trung cấp</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

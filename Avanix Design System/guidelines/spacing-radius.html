@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x160" name="Radius & elevation" subtitle="Generous corners + soft navy-tinted shadows" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page-grad); padding: 24px 28px; font-family: var(--font-body); }
+  .row { display: flex; gap: 18px; align-items: center; }
+  .box { width: 92px; height: 80px; background: #fff; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; }
+  .t { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="box" style="border-radius:var(--radius-sm);box-shadow:var(--shadow-xs)"><span class="t">sm·xs</span></div>
+    <div class="box" style="border-radius:var(--radius-md);box-shadow:var(--shadow-sm)"><span class="t">md·sm</span></div>
+    <div class="box" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-md)"><span class="t">lg·md</span></div>
+    <div class="box" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-lg)"><span class="t">xl·lg</span></div>
+    <div class="box" style="border-radius:var(--radius-pill);box-shadow:var(--shadow-xl)"><span class="t">pill·xl</span></div>
+  </div>
+</body>
+</html>

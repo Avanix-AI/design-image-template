@@ -1,0 +1,39 @@
+/* ============================================================
+   AVANIX — TYPOGRAPHY TOKENS
+   Plus Jakarta Sans (display/headings) · Inter (body) · JetBrains Mono (code).
+   ============================================================ */
+:root {
+  --font-display: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Weights — Plus Jakarta Sans tops out at 800 (ExtraBold); Inter 400–700 */
+  --fw-regular:   400; /* @kind font */
+  --fw-medium:    500; /* @kind font */
+  --fw-bold:      700; /* @kind font */
+  --fw-black:     800; /* @kind font */
+
+  /* Type scale (1.250 major-third-ish, tuned) — rem based on 16px root */
+  --fs-display:   clamp(2.75rem, 6vw, 4.5rem); /* @kind font */
+  --fs-h1:        clamp(2.25rem, 4vw, 3.25rem); /* @kind font */
+  --fs-h2:        clamp(1.75rem, 3vw, 2.5rem); /* @kind font */
+  --fs-h3:        1.5rem;     /* 24 @kind font */
+  --fs-h4:        1.25rem;    /* 20 @kind font */
+  --fs-lead:      1.1875rem;  /* 19 — intro paragraphs @kind font */
+  --fs-body:      1rem;       /* 16 @kind font */
+  --fs-sm:        0.875rem;   /* 14 @kind font */
+  --fs-xs:        0.75rem;    /* 12 — labels, eyebrows @kind font */
+
+  /* Line heights */
+  --lh-tight:     1.04;   /* @kind font */
+  --lh-snug:      1.18;   /* @kind font */
+  --lh-normal:    1.5;    /* @kind font */
+  --lh-relaxed:   1.65; /* @kind font */
+
+  /* Letter spacing */
+  --ls-tight:     -0.03em;  /* large display @kind font */
+  --ls-snug:      -0.015em; /* headings @kind font */
+  --ls-normal:    0; /* @kind font */
+  --ls-wide:      0.02em; /* @kind font */
+  --ls-eyebrow:   0.14em;   /* uppercase eyebrows / labels @kind font */
+}

@@ -1,0 +1,42 @@
+<!-- @dsCard group="Brand" viewport="700x230" name="Liquid glass surface" subtitle="The signature frosted card — light & dark variants" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); display: flex; }
+  .half { flex: 1; padding: 26px; display: flex; align-items: center; justify-content: center; min-height: 230px; }
+  .light { background:
+    radial-gradient(60% 80% at 20% 0%, rgba(10,91,255,.16), transparent 60%),
+    var(--bg-page-grad); }
+  .dark  { background:
+    radial-gradient(70% 90% at 80% 0%, rgba(46,114,255,.30), transparent 60%),
+    var(--av-navy-950); }
+  .card { width: 230px; padding: 20px; }
+  .card h4 { font-size: 17px; margin: 0 0 6px; }
+  .card p { font-size: 13px; margin: 0; line-height: 1.5; }
+  .light .card p { color: var(--av-slate-600); }
+  .dark .card { box-shadow: var(--shadow-glass-dark); }
+  .dark .card h4 { color: #fff; }
+  .dark .card p { color: var(--av-slate-300); }
+  .chip { display:inline-flex;white-space:nowrap;align-items:center;gap:6px;font-size:10px;letter-spacing:.04em;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--av-blue);color:#fff;margin-bottom:12px; }
+</style>
+</head>
+<body>
+  <div class="half light">
+    <div class="av-glass card">
+      <span class="chip">GLASS · LIGHT</span>
+      <h4>Frosted on light</h4>
+      <p>backdrop-blur, white border, diagonal sheen, soft navy shadow.</p>
+    </div>
+  </div>
+  <div class="half dark">
+    <div class="av-glass card" style="background:var(--glass-bg-dark);border-color:var(--glass-border-dark)">
+      <span class="chip">GLASS · DARK</span>
+      <h4>Frosted on navy</h4>
+      <p>translucent white over the navy gradient — the hero look.</p>
+    </div>
+  </div>
+</body>
+</html>

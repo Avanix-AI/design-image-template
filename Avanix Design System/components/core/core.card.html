@@ -1,0 +1,56 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Core" subtitle="Button, GlassCard, Badge, Avatar, Stat" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body { margin: 0; padding: 24px; font-family: var(--font-body);
+    background: radial-gradient(70% 90% at 50% 0%, rgba(10,91,255,.12), transparent 60%), var(--bg-page-grad); }
+  .stack { display: flex; flex-direction: column; gap: 18px; }
+  .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { Button, GlassCard, Badge, Avatar, Stat } = window.AvanixDesignSystem_a5b4a8;
+function Demo() {
+  return (
+    <div className="stack">
+      <div className="row">
+        <Button>Bắt đầu ngay</Button>
+        <Button variant="secondary">Xem demo</Button>
+        <Button variant="outline">Khoá học</Button>
+        <Button variant="ghost">Tìm hiểu thêm</Button>
+        <Button variant="dark" pill>Tham gia · $5/tháng</Button>
+        <Button disabled>Disabled</Button>
+      </div>
+      <div className="row">
+        <Badge color="blue">COURSE</Badge>
+        <Badge color="success" dot>Learning</Badge>
+        <Badge color="warning">Beta</Badge>
+        <Badge variant="solid" color="navy">PRO</Badge>
+        <Badge variant="glass" color="blue">n8n</Badge>
+        <Avatar name="Avanix" verified ring size={40} />
+        <Avatar name="Nguyên Pie" size={40} />
+      </div>
+      <div className="row" style={{alignItems:'stretch'}}>
+        <GlassCard padding={20} style={{flex:1, minWidth:200}}>
+          <h3 style={{fontSize:17, margin:'0 0 6px'}}>What you're building</h3>
+          <p style={{fontSize:13, margin:0, color:'var(--text-body)'}}>Four parts working together to create your second brain.</p>
+        </GlassCard>
+        <Stat value="2,271" label="Thành viên" sublabel="đang hoạt động" style={{minWidth:150}} />
+        <Stat value="33" label="Bài học" align="center" style={{minWidth:120}} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo/>);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Semantic & accent" subtitle="Success, warning, danger, info + the amber mascot accent" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; background: var(--bg-page-grad); padding: 22px; font-family: var(--font-body); }
+  .row { display: flex; gap: 12px; }
+  .cell { flex: 1; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); background: #fff; }
+  .top { height: 56px; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 13px; }
+  .bot { padding: 8px 10px; font-size: 11px; }
+  .hex { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="cell"><div class="top" style="background:var(--av-success)">Success</div><div class="bot" style="background:var(--av-success-bg);color:var(--av-success)"><span class="hex">#1FB872</span></div></div>
+    <div class="cell"><div class="top" style="background:var(--av-warning)">Warning</div><div class="bot" style="background:var(--av-warning-bg);color:#B36A00"><span class="hex">#F5A02A</span></div></div>
+    <div class="cell"><div class="top" style="background:var(--av-danger)">Danger</div><div class="bot" style="background:var(--av-danger-bg);color:var(--av-danger)"><span class="hex">#F0463B</span></div></div>
+    <div class="cell"><div class="top" style="background:var(--av-info)">Info</div><div class="bot" style="background:var(--av-info-bg);color:var(--av-info)"><span class="hex">#0A5BFF</span></div></div>
+    <div class="cell"><div class="top" style="background:var(--av-amber)">Amber</div><div class="bot" style="background:#FFF2DD;color:#B36A00"><span class="hex">Nix accent</span></div></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+/* ============================================================
+   AVANIX — COLOR TOKENS
+   AI Education & Automation. Navy + electric blue + glass.
+   ============================================================ */
+:root {
+  /* ---- Brand core (from the official palette) ---- */
+  --av-navy:        #0B1240;  /* primary dark — headings, dark surfaces */
+  --av-blue:        #0A5BFF;  /* electric brand blue — primary accent */
+  --av-white:       #FFFFFF;
+
+  /* ---- Navy ramp ---- */
+  --av-navy-950:    #06091F;
+  --av-navy-900:    #0B1240;  /* base navy */
+  --av-navy-800:    #121A52;
+  --av-navy-700:    #1B2570;
+  --av-navy-600:    #26328F;
+  --av-navy-500:    #2E3CB0;  /* cobalt — Nix's body blue */
+
+  /* ---- Blue ramp ---- */
+  --av-blue-700:    #0742C2;
+  --av-blue-600:    #0A5BFF;  /* base */
+  --av-blue-500:    #2E72FF;
+  --av-blue-400:    #5C90FF;
+  --av-blue-300:    #93B4FF;
+  --av-blue-200:    #C5D6FF;
+  --av-blue-100:    #E6EEFF;
+  --av-blue-50:     #F2F6FF;
+
+  /* ---- Neutral / slate ramp (cool, slightly blue) ---- */
+  --av-slate-900:   #10162E;
+  --av-slate-800:   #1E2542;
+  --av-slate-700:   #3A4263;
+  --av-slate-600:   #565E80;
+  --av-slate-500:   #767E9C;
+  --av-slate-400:   #9BA2BC;
+  --av-slate-300:   #C3C9DC;
+  --av-slate-200:   #DEE3F0;
+  --av-slate-150:   #E8ECF6;
+  --av-slate-100:   #F1F4FB;
+  --av-slate-50:    #F7F9FE;
+
+  /* ---- Mascot / warm accent (Nix's beak & feet — use sparingly) ---- */
+  --av-amber:       #F5A02A;
+  --av-amber-soft:  #FFB84D;
+
+  /* ---- Semantic ---- */
+  --av-success:     #1FB872;
+  --av-success-bg:  #E3F8EE;
+  --av-warning:     #F5A02A;
+  --av-warning-bg:  #FFF2DD;
+  --av-danger:      #F0463B;
+  --av-danger-bg:   #FDE7E5;
+  --av-info:        var(--av-blue-600);
+  --av-info-bg:     var(--av-blue-100);
+
+  /* ============================================================
+     SEMANTIC ALIASES — LIGHT (default, "liquid glass on light")
+     ============================================================ */
+  /* Backgrounds: soft lavender-white gradient is the canonical bg */
+  --bg-page:        #EEF1FA;
+  --bg-page-grad:   radial-gradient(120% 120% at 50% 0%, #FBFCFF 0%, #EDF1FB 46%, #E4E9F7 100%);
+  --bg-subtle:      var(--av-slate-100);
+  --surface:        var(--av-white);
+  --surface-raised: var(--av-white);
+
+  --text-strong:    var(--av-navy-900);  /* headlines */
+  --text-body:      var(--av-slate-700);
+  --text-muted:     var(--av-slate-500);
+  --text-faint:     var(--av-slate-400);
+  --text-on-accent: var(--av-white);
+  --text-accent:    var(--av-blue-600);
+  --text-link:      var(--av-blue-600);
+
+  --border:         var(--av-slate-200);
+  --border-strong:  var(--av-slate-300);
+  --ring:           color-mix(in srgb, var(--av-blue-600) 45%, transparent);
+
+  --accent:         var(--av-blue-600);
+  --accent-hover:   var(--av-blue-700);
+  --accent-press:   #0638A8;
+  --accent-soft:    var(--av-blue-100);
+
+  /* ---- LIQUID GLASS surface system ---- */
+  /* Frosted glass card on a light background */
+  --glass-bg:        rgba(255, 255, 255, 0.55);
+  --glass-bg-strong: rgba(255, 255, 255, 0.72);
+  --glass-border:    rgba(255, 255, 255, 0.85);
+  --glass-edge:      rgba(11, 18, 64, 0.06);   /* hairline outer edge */
+  --glass-blur:      18px;
+  --glass-tint-blue: rgba(10, 91, 255, 0.06);
+
+  /* Glass on dark (navy) surfaces */
+  --glass-bg-dark:     rgba(255, 255, 255, 0.07);
+  --glass-border-dark: rgba(255, 255, 255, 0.16);
+
+  /* ---- Glow (electric blue, the signature halo) ---- */
+  --glow-blue:    0 0 0 1px rgba(10,91,255,0.20), 0 8px 30px -6px rgba(10,91,255,0.45);
+  --glow-soft:    0 0 40px -8px rgba(10,91,255,0.35);
+}
+
+/* ============================================================
+   DARK THEME — "liquid glass on navy" (the brand's hero look)
+   Apply via <html data-theme="dark"> or class .av-dark
+   ============================================================ */
+[data-theme="dark"], .av-dark {
+  --bg-page:        var(--av-navy-950);
+  --bg-page-grad:   radial-gradient(120% 120% at 50% -10%, #122063 0%, #0B1240 45%, #06091F 100%);
+  --bg-subtle:      var(--av-navy-800);
+  --surface:        var(--av-navy-800);
+  --surface-raised: var(--av-navy-700);
+
+  --text-strong:    var(--av-white);
+  --text-body:      var(--av-slate-300);
+  --text-muted:     var(--av-slate-400);
+  --text-faint:     var(--av-slate-500);
+  --text-accent:    var(--av-blue-400);
+  --text-link:      var(--av-blue-400);
+
+  --border:         rgba(255,255,255,0.12);
+  --border-strong:  rgba(255,255,255,0.22);
+
+  --accent:         var(--av-blue-600);
+  --accent-hover:   var(--av-blue-500);
+  --accent-soft:    rgba(10,91,255,0.18);
+
+  --glass-bg:        rgba(255, 255, 255, 0.07);
+  --glass-bg-strong: rgba(255, 255, 255, 0.12);
+  --glass-border:    rgba(255, 255, 255, 0.18);
+  --glass-edge:      rgba(255, 255, 255, 0.06);
+}

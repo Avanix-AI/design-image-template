@@ -1,0 +1,23 @@
+<!-- @dsCard group="Brand" viewport="700x220" name="Logo" subtitle="A-monogram + wordmark — on light, on navy, and the app mark" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); display: flex; min-height: 220px; }
+  .cell { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .light { background: var(--bg-page-grad); }
+  .navy  { background: var(--bg-page-grad); filter: none; background: radial-gradient(80% 100% at 50% 0%, #122063, #06091F); }
+  .mark  { background: var(--av-slate-100); border-right: 1px solid var(--border); }
+  .light, .navy { border-right: 1px solid rgba(0,0,0,.05); }
+  img.lock { height: 96px; }
+  img.icon { width: 96px; border-radius: 22px; box-shadow: var(--shadow-lg); }
+</style>
+</head>
+<body>
+  <div class="cell mark"><img class="icon" src="../assets/logo/app-icon-navy.png" alt="Avanix app mark"></div>
+  <div class="cell light"><img class="lock" src="../assets/logo/lockup-navy.png" alt="Avanix logo navy"></div>
+  <div class="cell navy"><img class="lock" src="../assets/logo/lockup-white.png" alt="Avanix logo white"></div>
+</body>
+</html>

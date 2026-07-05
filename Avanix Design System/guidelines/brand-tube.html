@@ -1,0 +1,24 @@
+<!-- @dsCard group="Brand" viewport="700x200" name="Glass tube & glow" subtitle="Liquid connector pipes + the electric-blue halo motif" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background:
+    radial-gradient(60% 80% at 50% 0%, rgba(10,91,255,.14), transparent 60%), var(--bg-page-grad);
+    padding: 30px; display: flex; align-items: center; justify-content: center; gap: 0; min-height: 200px; }
+  .mod { width: 120px; height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+  .orb { width: 56px; height: 56px; border-radius: 999px; background: radial-gradient(circle at 35% 30%, #fff, var(--av-blue-300) 40%, var(--av-blue-600) 100%); box-shadow: var(--glow-blue); }
+  .lab { font-size: 12px; font-weight: 700; color: var(--av-navy); }
+  .tube { width: 90px; }
+</style>
+</head>
+<body>
+  <div class="av-glass mod"><div class="orb"></div><span class="lab">Input</span></div>
+  <div class="av-tube tube"></div>
+  <div class="av-glass mod" style="background:var(--glass-bg-strong)"><div class="orb" style="background:radial-gradient(circle at 35% 30%, #fff, #C5D6FF 40%, var(--av-navy-500) 100%)"></div><span class="lab">Agent</span></div>
+  <div class="av-tube tube"></div>
+  <div class="av-glass mod"><div class="orb"></div><span class="lab">Result</span></div>
+</body>
+</html>
